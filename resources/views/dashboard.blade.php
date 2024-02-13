@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>DASHBOARD PAGE</h1>
+    <h2><?= $name;?></h2>
+    <img src="img/<?= $image;?>" alt="bc" width="10%">
+
+
+<script src="js/script.js"></script>    
 </body>
 </html>

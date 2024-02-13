@@ -18,5 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard', [
+        "name" => "asep",
+        "alamat"=> "bandung",
+        "image" => "bc.png"
+    ]);
 });
