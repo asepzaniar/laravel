@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +27,8 @@ Route::get('/about', function () {
         [
             "titles"=>"Tentang Saya",
             "autors"=>"asep",
-            "body"=>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, recusandae dicta modi asperiores veniam consequatur voluptatibus consectetur deleniti provident quasi nobis. Consectetur, numquam placeat eligendi sint ea ipsa libero. Ad dicta tempore ullam quidem enim vel praesentium officiis voluptate aliquid labore voluptatibus dolore ab doloribus sed saepe sunt at quasi aut aspernatur beatae nam, in fuga laborum. Explicabo fugiat nisi nostrum hic laboriosam dignissimos quaerat cupiditate quo natus illo, ipsa saepe architecto mollitia aut quidem iste? Nulla aliquam id harum."
+            "body"=>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, recusandae dicta modi asperiores veniam consequatur voluptatibus consectetur deleniti provident quasi nobis. Consectetur, numquam placeat eligendi sint ea ipsa libero. Ad dicta tempore ullam quidem enim vel praesentium officiis voluptate aliquid labore voluptatibus dolore ab doloribus sed saepe sunt at quasi aut aspernatur beatae nam, in fuga laborum. Explicabo fugiat nisi nostrum hic laboriosam dignissimos quaerat cupiditate quo natus illo, ipsa saepe architecto mollitia aut quidem iste? Nulla aliquam id harum.",
+            "image" => "me.jpg"
         ],
         
     
@@ -43,6 +47,10 @@ Route::get('/dashboard', function () {
         "title"=> "Dashboard",
         "name" => "asep",
         "alamat"=> "bandung",
-        "image" => "bc.png"
+        "image" => "me.jpg"
     ]);
 });
+
+Route::get('/posts', [PostController::class, 'index']);
+//halaman single routes//
+Route::get('/posts/{slug}', [PostController::class,'show']);
