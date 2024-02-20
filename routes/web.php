@@ -51,6 +51,8 @@ Route::get('/dashboard', function () {
     ]);
 });
 
+//----route controller----//
 Route::get('/posts', [PostController::class, 'index']);
 //halaman single routes//
 Route::get('/posts/{slug}', [PostController::class,'show']);
+//-----end---------//
